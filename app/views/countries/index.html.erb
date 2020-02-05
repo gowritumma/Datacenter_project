@@ -1,0 +1,33 @@
+<div class="index">
+
+<h1>Countries</h1>
+<%= link_to 'New Country', new_country_path %>
+<% if @countries == nil || @countries.size == 0 %>
+ <h3> No Countries available. </h3>
+<% else %>
+<table class="listing">
+ 
+    <tr class="header">
+      <th>Name</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+
+
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= country.language.name %></td>
+        <td><%= link_to 'Show', country %></td>
+        <td><%= link_to 'Edit', edit_country_path(country) %></td>
+        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+
+
+</div>

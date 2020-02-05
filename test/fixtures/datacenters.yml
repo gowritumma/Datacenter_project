@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  servers_available: 1
+  servers_capacity: 1
+  country: one
+
+two:
+  code: MyString
+  servers_available: 1
+  servers_capacity: 1
+  country: two

@@ -1,0 +1,37 @@
+<div class="index">
+
+<h1>DataCenters</h1>
+<%= link_to 'New Datacenter', new_datacenter_path %><br />
+<% if @datacenters == nil || @datacenters.size == 0 %>
+ <h3> No DataCenters available. </h3>
+<% else %>
+<table class="listing">
+
+    <tr class = "header">
+      <th>Code</th>
+      <th>Servers available</th>
+      <th>Servers capacity</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+
+
+  <tbody>
+    <% @datacenters.each do |datacenter| %>
+      <tr>
+        <td><%= datacenter.code %></td>
+        <td><%= datacenter.servers_available %></td>
+        <td><%= datacenter.servers_capacity %></td>
+        <td><%= datacenter.country.name %></td>
+        <td><%= link_to 'Show', datacenter %></td>
+        <td><%= link_to 'Edit', edit_datacenter_path(datacenter) %></td>
+        <td><%= link_to 'Destroy', datacenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+
+</div>
